@@ -1,0 +1,41 @@
+html, body {
+  height: 100%;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: xx-large;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.main {
+  margin: 15px;
+  background-color: rgba(5, 5, 5, 0.5)
+}
+
+.random_RGB {
+  display: flex;
+  flex-direction: row;
+}
+
+.random_RGB > div {
+  flex: 50%;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
