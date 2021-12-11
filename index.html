@@ -23,14 +23,23 @@
   </head>
   <body onload = "ScriptOnload()">
     <div class = "main" onclick="ScriptOnload()" unselectable="on">
-      <p class="noselect">
+      <div class="noselect">
         Click here to change color
-        <div class = "random_RGB">
-          <div id = "random_R"> </div>
-          <div id = "random_G"> </div>
-          <div id = "random_B"> </div>
-        </div>
-      </p>
+        <br> RGB
+      </div>
+      <div class = "random_RGB">
+        <div id = "random_R"> </div>
+        <div id = "random_G"> </div>
+        <div id = "random_B"> </div>
+      </div>
+      <div class="noselect">      
+        Hex Code
+      </div>
+      <!-- The button used to copy the text -->
+      <button onclick="CopyFunction()">
+        <span id = "Hex" style = "font-size: xx-large"></span> <span  class="material-icons-outlined">content_copy</span>
+      </button>
+      </div>
     </div>
   </body>
 </html>
