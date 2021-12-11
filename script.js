@@ -1,13 +1,38 @@
-function ScriptOnload() {
-  var rgbarray = getRandomIntArray();  
+var colorarray = new Array();
+
+function setText(rgbarray) {
   document.getElementById('random_R').innerHTML = rgbarray[0];
   document.getElementById('random_G').innerHTML = rgbarray[1];
   document.getElementById('random_B').innerHTML = rgbarray[2];
+  return console.log('Text Set')
+}
 
+function setBackground(rgbarray) {
   var colorCSS = 'rgb(' + rgbarray[0] + ',' +  rgbarray[1] + ',' + rgbarray[2] + ')';
   document.body.style.backgroundColor = colorCSS;
+  console.log('Background color set')
+}
 
-  document.getElementById('Hex').innerHTML = rgbToHex(rgbarray);
+function setHexcode(rgbarray) {
+  document.getElementById('Hex').innerHTML = rgbToHex(rgbarray);  
+  console.log('Hex Code set')
+}
+
+function setPrevious(rgbarray) {
+  var colorCSS = 'rgb(' + rgbarray[0] + ',' +  rgbarray[1] + ',' + rgbarray[2] + ')';
+  colorarray.push([ [rgbarray[0], rgbarray[1], rgbarray[2]], rgbToHex(rgbarray) ]);
+  console.log('Previous colors set')
+}
+
+function ScriptOnload(rgbarray) {
+  if (rgbarray == undefined) {
+    var rgbarray = getRandomIntArray();  
+  };
+
+  setText(rgbarray)
+  setBackground(rgbarray)
+  setHexcode(rgbarray)
+  setPrevious(rgbarray)
 }
 
 function getRandomIntArray() {
@@ -25,12 +50,22 @@ function rgbToHex(rgbarray) {
 
 
 function CopyFunction() {
-  /* Get the text field */
+  // Reference: https://www.codegrepper.com/code-examples/javascript/js+copy+innerhtml+to+clipboard
   var copyText = document.getElementById("Hex").innerHTML;
 
-   /* Copy the text inside the text field */
-  navigator.clipboard.writeText(copyText);
+  const elem = document.createElement('textarea');
+  elem.value = copyText;
+  document.body.appendChild(elem);
+  elem.select();
+  document.execCommand('copy');
+  document.body.removeChild(elem);
+}
 
-  /* Alert the copied text */
-  alert("Copied Hex Code: " + copyText);
+function SetPrevious() {
+  if (colorarray.length > 1) {
+    rgbarray = colorarray[colorarray.length - 2][0]
+    return ScriptOnload(rgbarray)
+  } else {
+    return console.log('No Previous Value')
+  }
 }
