@@ -41,7 +41,7 @@ body {
   display: inline-block;
 }
 
-.random_RGB, .noselect {
+.Refresh, .random_RGB, .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
      -khtml-user-select: none; /* Konqueror HTML */
@@ -56,4 +56,12 @@ button {
   border: 0px solid white;  
   border-bottom: 1px solid white;
   color: white;
+}
+
+.Refresh {
+  text-align: right;  
+}
+
+#Refreshbutton {
+  cursor: pointer;
 }

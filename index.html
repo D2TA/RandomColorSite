@@ -22,7 +22,7 @@
     <script src="./script.js"></script>
   </head>
   <body onload = "ScriptOnload()">
-    <div class = "main" onclick="ScriptOnload()" unselectable="on">
+    <div class = "main" unselectable="on">
       <div class="noselect">
         Click here to change color
         <br> RGB
@@ -39,7 +39,9 @@
       <button onclick="CopyFunction()">
         <span id = "Hex" style = "font-size: xx-large"></span> <span  class="material-icons-outlined">content_copy</span>
       </button>
-      </div>
+    </div>
+    <div class = "Refresh">
+      <span id = "Refreshbutton" class="material-icons-outlined" onclick="ScriptOnload()">refresh</span>
     </div>
   </body>
 </html>
